@@ -1,0 +1,510 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Updated font */
+}
+
+
+body {
+    color: #333;
+    background-color: #f4f8fc;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    width: 120px; /* Increased size for better visibility */
+    height: 120px; /* Ensure the logo retains aspect ratio */
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image looks clean */
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    color: #00509e;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('../assets/images/office\ teamwork\ happy\ people.jpg'); /* Replace with the desired image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hero-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #00a8ff;
+    color: white;
+}
+
+.alt-btn {
+    background-color: #ffffff;
+    color: #00509e;
+    border: 2px solid #00a8ff;
+}
+
+.hero-btn:hover, .alt-btn:hover {
+    opacity: 0.9;
+}
+
+.our-services {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.our-services h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    max-width: 400px;
+    text-align: center;
+}
+
+.service-item .icon img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    color: #00509e;
+    margin-bottom: 1rem;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.service-item a {
+    color: #00a8ff;
+    text-decoration: none;
+}
+
+.service-item a:hover {
+    text-decoration: underline;
+}
+
+/* Customer Satisfaction Section */
+.customer-satisfaction {
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, #001f3f, #00509e, #00a8ff);
+    color: white;
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+.customer-satisfaction h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.testimonials {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 250px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #e0e0e0;
+}
+
+.customer-info {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+.customer-name {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.stars {
+    color: #ffd700;
+}
+
+/* Animation for Gradient Background */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 3rem 0;
+    margin-top: 2rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-section {
+    max-width: 250px;
+    margin: 1rem 0;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 0.5rem 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-section form input,
+.footer-section form select,
+.footer-section form textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.footer-section form input[type="email"],
+.footer-section form input[type="text"],
+.footer-section form select {
+    background-color: #444;
+    color: #fff;
+}
+
+.footer-section form textarea {
+    height: 60px;
+    resize: none;
+    background-color: #444;
+    color: #fff;
+}
+
+.footer-section form button {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 3px;
+    background-color: #00509e;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.footer-section form button:hover {
+    background-color: #0073e6;
+}
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+.footer-section a {
+    color: #00a8ff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+/* Login Section */
+.form-section {
+    background-color: #f0f8ff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    color: #004080;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.form-container input:focus {
+    outline: none;
+    border-color: #00a8ff;
+    box-shadow: 0 0 5px rgba(0, 168, 255, 0.5);
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00509e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #003f7e;
+}
+
+.form-container .form-link {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.form-container .form-link a {
+    color: #00509e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-container .form-link a:hover {
+    text-decoration: underline;
+}
+/* Media Queries for Responsive Design */
+
+/* Extra Small Devices (up to 480px) */
+/* Mobile Devices - Adjust Navbar Layout */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+        padding: 0.5rem 1rem;
+    }
+
+    .logo-container {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center the logo */
+        margin-bottom: 1rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        gap: 0.5rem;
+        text-align: center; /* Center-align links */
+        padding: 0; /* Remove extra padding */
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        font-size: 1rem; /* Adjust font size */
+        padding: 0.5rem 0; /* Add space around links */
+        display: block; /* Make links block-level for full-width clicks */
+        color: #00509e; /* Ensure text color is clear */
+    }
+
+    .nav-links li a:hover {
+        background-color: #f4f8fc; /* Add hover effect for better UX */
+    }
+}
+
+
+/* Small Devices (up to 768px) */
+@media (max-width: 768px) {
+    .navbar-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .services-container {
+        flex-wrap: wrap;
+    }
+
+    .testimonial-card {
+        width: 80%;
+    }
+
+    .form-container {
+        max-width: 90%;
+    }
+
+    .footer-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-section {
+        max-width: 100%;
+    }
+}
+
+/* Medium Devices (up to 1024px) */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .services-container {
+        flex-wrap: wrap;
+    }
+
+    .testimonial-card {
+        width: 45%;
+    }
+
+    .form-container {
+        max-width: 80%;
+    }
+
+    .footer-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextStep Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="./assets/images/NextStepLogo1.jpeg" alt="Next Step Logo" class="navbar-logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="register.html">Register</a></li>
+           
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Your Trusted Recruitment Agency Partner</h2>
+            <p>15+ Years of Recruitment & Executive Search Excellence!</p>
+            <div class="hero-buttons">
+                <button class="hero-btn" id="bookAppointmentBtn">Book An Appointment</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="our-services">
+        <h2>OUR SERVICES</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <div class="icon">
+                    <img src="./assets/icons/hiring-icon.png" alt="Recruitment Icon" />
+                </div>
+                <h3>Recruitment</h3>
+                <p>As a leading recruitment agency, we specialize in sourcing talent for diverse industries, helping individuals at all stages of their careers. From recent graduates and master’s degree holders to individuals without formal certificates seeking quick online opportunities, we are dedicated to connecting candidates with the right opportunities. Our expertise in recruitment ensures personalized solutions to meet the needs of both job seekers and employers. Let our expert recruiters help you find the perfect fit for your team. Reach out to us now!</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">
+                    <img src="./assets/icons/binoculars-icon.png" alt="Executive Search Icon" />
+                </div>
+                <h3>Executive Search</h3>
+                <p>Our Executive Search services are designed to identify and secure exceptional top-tier talent for C-level and senior management roles across a wide range of industries and markets. Leveraging our expertise in headhunting and an extensive professional network, we tailor our approach to align with your specific recruitment needs. Contact us now!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login-section" class="form-section">
+        <div class="form-container">
+            <h2>Sign In To Your Account</h2>
+            <form id="loginForm">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit">Login</button>
+
+                <p class="form-link">Don’t have an account? <a href="register.html">Create one here</a>.</p>
+            </form>
+            <p class="error-message" id="errorMessage" style="color: red; display: none;"></p>
+            <p class="success-message" id="successMessage" style="color: green; display: none;"></p>
+        </div>
+    </section>
+
+    <!-- Customer Satisfaction Section -->
+    <section class="customer-satisfaction" id="satisfaction">
+        <h2>Customer Satisfaction</h2>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <p>“Thank you for helping me find a job! The whole process was easy, and the team was super helpful. I’m so happy with my new role!"</p>
+                <div class="customer-info">
+                    <span class="customer-name">Sarah Katrib</span>
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>"NextStep made it so simple to find a great senior job. They really listened to what I wanted and found the perfect fit for me. Thanks a lot!"</p>
+                <div class="customer-info">
+                    <span class="customer-name">Ahmad El Murr</span>
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>"I needed a quick online job, and you made it happen! You found something that works perfectly for me. Really thankful for the support!"</p>
+                <div class="customer-info">
+                    <span class="customer-name">Layla Hachem</span>
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>POPULAR JOB LOCATIONS</h3>
+                <ul>
+                    <li><a href="#">Jobs in Lebanon</a></li>
+                    <li><a href="#">Jobs in UAE</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Privacy Policy</h3>
+                <p>
+                    Your privacy is important to us. Read our
+                    <a href="privacy-policy.html" target="_blank">Privacy Policy</a> to learn how we protect your personal data.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+    
+            const errorMessage = document.getElementById("errorMessage");
+            const successMessage = document.getElementById("successMessage");
+    
+            try {
+                const response = await fetch("http://localhost:5000/api/auth/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+    
+                const result = await response.json();
+                console.log("Login Response:", result); // Debugging to confirm the response
+    
+                if (response.ok) {
+                    successMessage.style.display = "block";
+                    successMessage.textContent = "Login successful!";
+                    errorMessage.style.display = "none";
+    
+                    // Save token to localStorage
+                    localStorage.setItem("token", result.token);
+    
+                    // Redirect based on role
+                    if (result.role === "admin") {
+                        console.log("Redirecting to admin dashboard."); // Debugging message
+                        window.location.href = './admin/dashboard.html';
+                    } else if (result.role === "user") {
+                        console.log("Redirecting to user profile."); // Debugging message
+                        window.location.href = "./profile-appointment.html";
+                    } else {
+                        console.error("Unexpected role:", result.role); // Debugging unexpected role
+                        throw new Error("Unexpected role returned from the server.");
+                    }
+                } else {
+                    console.error("Login failed:", result.message); // Debugging login failure
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                console.error("Error during login:", error.message); // Log the error for debugging
+                errorMessage.style.display = "block";
+                errorMessage.textContent = error.message;
+                successMessage.style.display = "none";
+            }
+        });
+    
+        document.getElementById("bookAppointmentBtn").addEventListener("click", () => {
+            // Scroll to the login section smoothly
+            const loginSection = document.getElementById("login-section");
+            loginSection.scrollIntoView({ behavior: "smooth" });
+    
+            // Optionally highlight the login section
+            loginSection.style.border = "2px solid #00509e";
+            setTimeout(() => {
+                loginSection.style.border = "none";
+            }, 2000); // Remove highlight after 2 seconds
+        });
+    </script>
+    
+    <script src="./scripts/scripts.js"></script>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
